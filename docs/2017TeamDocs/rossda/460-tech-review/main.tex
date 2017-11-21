@@ -82,34 +82,24 @@
 \clearpage
 
 \begin{singlespace}
-\section{Piece 1}
+\section{Database Management System}
 \subsection{Overview}
-For the Aerolyzer project's development, the enviroment will need to be consistent, fast, and it must be capable of updating utilities quickly.
+
 \subsection{Criteria}
 \begin{enumerate}
 \item
 \end{enumerate}
 \subsection{Options}
-\subsubsection{AWS Box}
-Amazon Web Services offers Amazon EC2 as a virtual computing environment.
-Amazon EC2 would be fast since it's hosted on Amazon servers.
-EC2 would provide a consistency to our team during development, since the whole team would be accessing a single environment.
-The main issue with EC2 comes with keeping the environment up to date or making changes to the environment, since the entire team is working in the same space any changes to the environment could have serious impacts on development. 
-The other issue to consider is that Amazon EC2 isn't free, the amount of processing that is done in the EC2 instance is relfected in a monthly bill.
-\subsubsection{Ubuntu VirtualBox}
-VirtualBox is a Ubuntu System emulator that allows for a Virtual Machine to host a operating system seperate from the host operating system.
-As far as speed is concerned, it depends on the hardware of the system running VirtualBox so it's performance could be detrimented here.
-Consistency in the enviroment would require that the team is using the same virtual machine at any given time, this might be difficult if utilities are updated or changed during development.
-Updating the virtual machine would be as easy as updating one image and sharing it amongst the team. 
-\subsubsection{Docker}
-Docker is the container platform, that circumvents virtual machines. Containers are executable packages that contain the code and it's required libraries.
-This would make it so that any changes to the environment can just be pushed as updates to the container.
-This would be as fast as the host OS and require less processing power since there isn't a guest OS acting as a middle man.
-Docker would enable super consistent development since the team would always have the same environment if they have the same code.
-\subsection{Development Environment Discussion}
-Docker is the development platform most suited for application development, but since the majority of the Aerolyzer project is the development of a Python library it would be time consuming to update entire containers rather than a library of code.
+\subsubsection{SQLite3}
+
+\subsubsection{MySQL}
+
+\subsubsection{PostgreSQL}
+
+\subsection{Database Management System Discussion}
+
 \subsection{Conclusion}
-This would make the VirtualBox the most practical since the virtual machine can simply access the git of the pyhton library.
+
 
 \section{Web Framework}
 \subsection{Overview}
@@ -136,6 +126,7 @@ Django also supports clean URL designs and in framework templating.
 The Aerolyzer project already has a Django web application developed, and this is ideal because integrating the Aerolyzer Python Library into Rails or Express would be more difficult. 
 \subsection{Conclusion}
 blah
+
 \section{Visualization \& Display}
 \subsection{Overview}
 Presenting the output from the Aerolyzer library is the key step in making the user understand the project.
@@ -162,7 +153,48 @@ CanvasJS is the most robust JavaScript of the 3, which may take some additional 
 \subsection{Conclusion}
 blah
 
-\nocite{*}
+\begin{center}
+ \begin{tabular}{|l|c|c|} 
+ \hline
+ \multicolumn{3}{|c|}{Database Management System} \\
+ \hline
+ Choice & Pros & Cons\\ [0.5ex] 
+ \hline\hline
+ SQLite3 & 6 & 87837 \\ 
+ \hline
+ MySQL & 545 & 778\\
+ \hline
+ PostgreSQL & 88 & 788\\ [1ex] 
+ \hline
+\end{tabular}
+ \begin{tabular}{|l|c|c|} 
+ \hline
+ \multicolumn{3}{|c|}{Web Framework} \\
+ \hline
+ Choice & Pros & Cons\\ [0.5ex] 
+ \hline\hline
+ Express.js & 6 & 87837 \\ 
+ \hline
+ Ruby on Rails & 545 & 778\\
+ \hline
+ Django & 88 & 788\\ [1ex] 
+ \hline
+\end{tabular}
+ \begin{tabular}{|l|c|c|} 
+ \hline
+ \multicolumn{3}{|c|}{Visualization \& Display} \\
+ \hline
+ Choice & Pros & Cons\\ [0.5ex] 
+ \hline\hline
+ Google Charts & 6 & 87837 \\ 
+ \hline
+ ChartJS & 545 & 778\\
+ \hline
+ CanvasJS & 88 & 788\\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 
