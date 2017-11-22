@@ -166,19 +166,22 @@ Most of the presentation can be acheived with HTML alone, but the main display w
 \subsubsection{Google Charts}
 Google Charts is a JavaScript that is inserted into the web page and is then fed the data to be charted.
 There are 28 different types of charts and they all are rendered as SVG or VML.
-Google Charts lets the chart make a query to the database directly and displays customizable tooltips when moused over.
+Google Charts lets the chart make a query to the database directly and displays customizable tooltips when moused over.\cite{GoogleCh}
 \subsubsection{CanvasJS}
 CanvasJS, in addition to having 30 types of charts, claims to be an ultra fast HTML5 charting library.
 Rather than render SVG charts, CanvasJS inserts HTML code when rendered.
-With a wide library of customization, CanvasJS claims to make the developer's charts work on Chrome, Firefox, Safari, and Internet Explorer.
+With a wide library of customization, CanvasJS claims to make the developer's charts work on Chrome, Firefox, Safari, and Internet Explorer.\cite{CanvasJS}
 \subsubsection{ChartJS}
 ChartJS renders charts into HTML5, like CanvasJS, but is open source.
-ChartJS only has 8 chart types, but offers custimization that lets developers mix chart types.
+ChartJS only has 8 chart types, but offers custimization that lets developers mix chart types.\cite{ChartJS}
 \subsection{Visualization \& Display Discussion}
-CanvasJS is the most robust JavaScript of the 3, which may take some additional code to get the desired results, but the end product will most likely be closer to the ideal visualization. 
+CanvasJS is the most robust JavaScript of the 3, which may take some additional code to get the desired results, but the end product will most likely be closer to the ideal visualization. \cite{CanvasJS}
 \subsection{Conclusion}
-blah
-
+Having visuals rendered into HTML5 elements would be ideal.
+It ensures that the graphics are rendered with the rest of the page.
+Of these three libraries, CanvasJS is most appealing but isn't open source.
+Aerolyzer is an open source project and avoiding conflicting licences is important.
+Since this is the case, Google Charts is the best option since it's terms of use won't interfere with Aerolyzer's liscencing.\cite{GoogleCh}\cite{CanvasJS}
 
 \begin{center}
  \begin{tabular}{|l|c|c|} 
@@ -187,11 +190,11 @@ blah
  \hline
  Choice & Pros & Cons\\ [0.5ex] 
  \hline\hline
- SQLite3 & 6 & 87837 \\ 
+ SQLite3 & Lightweight, Fast & Not suited for high traffic \\ 
  \hline
- MySQL & 545 & 778\\
+ MySQL & Fast, Robust features & Large, Administration required \\
  \hline
- PostgreSQL & 88 & 788\\ [1ex] 
+ PostgreSQL & Fast & Administration required\\ [1ex] 
  \hline
 \end{tabular}
  \begin{tabular}{|l|c|c|} 
@@ -213,11 +216,11 @@ blah
  \hline
  Choice & Pros & Cons\\ [0.5ex] 
  \hline\hline
- Google Charts & 6 & 87837 \\ 
+ Google Charts & Free to use, sufficient features & not as fast as CanvasJS \\ 
  \hline
- ChartJS & 545 & 778\\
+ ChartJS & Open Source & Not as many features\\
  \hline
- CanvasJS & 88 & 788\\ [1ex] 
+ CanvasJS & Very Robust & Not Open Source\\ [1ex] 
  \hline
 \end{tabular}
 \end{center}
