@@ -82,30 +82,9 @@
 \clearpage
 
 \begin{singlespace}
-\section{Database Management System}
-\subsection{Overview}
-
-\subsection{Criteria}
-\begin{enumerate}
-\item Meets ACID Properties
-\item Speed
-\item Size
-\end{enumerate}
-\subsection{Options}
-\subsubsection{SQLite3}
-
-\subsubsection{MySQL}
-
-\subsubsection{PostgreSQL}
-
-\subsection{Database Management System Discussion}
-
-\subsection{Conclusion}
-
-
 \section{Web Framework}
 \subsection{Overview}
-Web frameworks are what will enable the Aerolyzer library to interact with the users, so the framework's performance will directly affect the end product of the Aerolyzer app.
+Web frameworks are what will enable the Aerolyzer library to interact with the users, so the framework's performance will directly affect the end product of the Aerolyzer app. Depending on which framework the Aerolyzer app utilizes, the integration of the Aerolyzer python library could be simpler. The web framework will also inform the structure of any user input, so clarity in this aspect is critical.
 \subsection{Criteria}
 \begin{enumerate}
 \item Speed
@@ -117,19 +96,49 @@ Web frameworks are what will enable the Aerolyzer library to interact with the u
 Express is a streamlined version of Node.js.
 Express itself doesn't have database support, but is capable of running third-party modules to interface with the database.
 Express is useful for API development as it includes the neccesary http functionality to provide users functions.
+Since Express is a form of Node, an app built on Express will crash if an exception goes uncaught. This can make potential debugging a hassle since the app will have to be restarted completely if anything goes wrong.
+Express typically performs a little quicker than it's parent framework, Node.js, but it's speed can suffer significantly under high traffic.
+Security isn't built in Express functionality, but there is third-party middleware that sets up HTTP headers and transmission security.
+\cite{Express}
 \subsubsection{Ruby on Rails}
- Ruby on Rails, 'Rails' for short, is a Ruby based web framework.
+Ruby on Rails, 'Rails' for short, is a Ruby based web framework.
 Rails claims to value web application conventions and will default to many of those conventions in the case that the developer didn't make custom configurations.
 This hopes to make Rails code shorter and less buggy than other frameworks that require minutiae from the developer.
 Rails runs off of a SQLite3 database and is best suited for interfacing with that type of database.
+Rails has a default HTTP security built directly into the framework.
+Being written in Ruby and having many features built-in means that Rails isn't the fastest framework.
+\cite{Rails}
 \subsubsection{Django}
 Django is a python based framework that claims to make database-driven Web development fast and easy.
-The first step to using Django is writing the model which maps out your database layout.
 Django also supports clean URL designs and in framework templating.
+The first step to using Django is writing the model which maps out your database layout.
+Since Django apps are centered around these models, Django has a built-in API for manipulating any objects in the model.
 \subsection{Web Framework Discussion}
-The Aerolyzer project already has a Django web application developed, and this is ideal because integrating the Aerolyzer Python Library into Rails or Express would be more difficult. 
+Express immediately takes 3rd place amongst these choices, because it's overly reliant on third party middleware. Rails and Django are similar in respect to included features, but Django has it's model API for increased ease of use. 
 \subsection{Conclusion}
-blah
+Django offers the most complete set of framework features while maintaining speed. Since Django is written in python and the Aerolyzer library is also written in python, integrating the Aerolyzer library would be easiest with Django.
+
+
+\section{Database Management System}
+\subsection{Overview}
+A database is how computers store data and its relationships with other values. For Aerolyzer to work properly we'll need a database to store photos and weather analysis under the zip code they apply to. Since the 3 most reasonable choices are all SQL based, the management system that works with the web framework will most likely be the best choice.
+\subsection{Criteria}
+\begin{enumerate}
+\item Meets ACID Properties
+\item Speed
+\item Size
+\end{enumerate}
+\subsection{Options}
+\subsubsection{SQLite3}
+\cite{SQLiteAbout}\cite{SQLiteUse}\cite{SQLiteFeat}
+\subsubsection{MySQL}
+\cite{MySQLDoc}
+\subsubsection{PostgreSQL}
+\cite{PostgreSQLDoc}
+\subsection{Database Management System Discussion}
+
+\subsection{Conclusion}
+
 
 
 \section{Visualization \& Display}
@@ -180,11 +189,11 @@ blah
  \hline
  Choice & Pros & Cons\\ [0.5ex] 
  \hline\hline
- Express.js & 6 & 87837 \\ 
+ Express.js & Lightweight, Quick & Requires Middleware for many features, Prone to crash \\ 
  \hline
- Ruby on Rails & 545 & 778\\
+ Ruby on Rails & Robust features & Not particularly fast\\
  \hline
- Django & 88 & 788\\ [1ex] 
+ Django & Robust features, Quick & Largest framework\\ [1ex] 
  \hline
 \end{tabular}
  \begin{tabular}{|l|c|c|} 
