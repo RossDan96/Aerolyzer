@@ -112,11 +112,13 @@ Being written in Ruby and having many features built-in means that Rails isn't t
 Django is a python based framework that claims to make database-driven Web development fast and easy.
 Django also supports clean URL designs and in framework templating.
 The first step to using Django is writing the model which maps out your database layout.
+\cite{DjangoStart}
 Since Django apps are centered around these models, Django has a built-in API for manipulating any objects in the model.
+\cite{DjangoOver}
 \subsection{Web Framework Discussion}
-Express immediately takes 3rd place amongst these choices, because it's overly reliant on third party middleware. Rails and Django are similar in respect to included features, but Django has it's model API for increased ease of use. 
+Express immediately takes 3rd place amongst these choices, because it's overly reliant on third party middleware\cite{Express}. Rails and Django are similar in respect to included features, but Django has it's model API for increased ease of use\cite{Rails}\cite{DjangoOver}. 
 \subsection{Conclusion}
-Django offers the most complete set of framework features while maintaining speed. Since Django is written in python and the Aerolyzer library is also written in python, integrating the Aerolyzer library would be easiest with Django.
+Django offers the most complete set of framework features while maintaining speed. Since Django is written in python and the Aerolyzer library is also written in python, integrating the Aerolyzer library would be easiest with Django. \cite{DjangoOver}
 
 
 \section{Database Management System}
@@ -124,21 +126,30 @@ Django offers the most complete set of framework features while maintaining spee
 A database is how computers store data and its relationships with other values. For Aerolyzer to work properly we'll need a database to store photos and weather analysis under the zip code they apply to. Since the 3 most reasonable choices are all SQL based, the management system that works with the web framework will most likely be the best choice.
 \subsection{Criteria}
 \begin{enumerate}
-\item Meets ACID Properties
 \item Speed
 \item Size
 \end{enumerate}
 \subsection{Options}
 \subsubsection{SQLite3}
-\cite{SQLiteAbout}\cite{SQLiteUse}\cite{SQLiteFeat}
+SQLite boasts it's status as the most deployed database in the world\cite{SQLiteAbout}.
+SQLite manages the SQL database within a single disk file and the library itself is about 1.8 MiB\cite{SQLiteAbout}.
+Since SQLite is self-contained and lightweight it's suitable for most low traffic applications\cite{SQLiteUse}.
+Where SQLite starts to suffer is it's speed when given requests for data that are large relative to the available memory. For Aerolyzer this may be problematic, since the database hase to be capable of fetching high definition pictures quickly\cite{SQLiteAbout}.
 \subsubsection{MySQL}
-\cite{MySQLDoc}
+MySQL is Oracle's SQL database server.
+MySQL has a larger library to install and has administrative functionality included.
+This means that MySQL would require considerable set up and potential maintenance.
+The size and effort required for MySQL is all in order to provide a database that can handle large requests and high traffic.\cite{MySQLDoc}
 \subsubsection{PostgreSQL}
-\cite{PostgreSQLDoc}
+PostgreSQL is the SQL supporting descendant of the POSTGRES database system.
+PostgreSQL includes a wide function library with Python support.
+The transfer size PostgreSQL supports is more than enough for the Aerolyzer app.
+The administrative functions included in PostgreSQL would make monitoring the database efficient.\cite{PostgreSQLDoc}
 \subsection{Database Management System Discussion}
-
+All three database systems would work in the Aerolyzer app, but the question remains which would work the best. PostgreSQL and MySQL would most likely have similar performance once set up, while SQLite might have issues under high traffic.
 \subsection{Conclusion}
-
+MySQL is the most complete SQL system of these choices, and its performance is most likely going to be similar to PostgreSQL.
+The fact that MySQL has a more expansive library means that it's more likely to have the database solutions we need during development.
 
 
 \section{Visualization \& Display}
