@@ -1,3 +1,8 @@
+import urllib2
+import json
+import sys
+import os
+
 '''
  Purpose:        The purpose of this script is to extract the Latitude and Longitude from the EXIF data
  Inputs:         tags: structure storing the image's EXIF data.
