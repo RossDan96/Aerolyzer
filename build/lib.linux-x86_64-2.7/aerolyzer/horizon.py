@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+class horizon:
+	
+	def __init__(self):
+		self.message = "Hello World"
+	
+
+	def _hello(self,i):
+		x=0
+		while x<i:
+			print self.message
+			x = x + 1
+		return 0
+=======
 import sys
 import cv2
 import os
@@ -42,4 +56,9 @@ def getHorizon(self, directory, img_noblur,image):
 	cv2.imwrite("results/H_"+image,img_noblur)
 
 #horizon()._testAnalyze("./images/")
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> 6e1a1f1... finished the get_coord function
+>>>>>>> f646783... finished the get_coord function

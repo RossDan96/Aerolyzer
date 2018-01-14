@@ -140,6 +140,8 @@ class imgRestFuncs(object):
             doc = yaml.load(f)
             f.close()
         return doc
+<<<<<<< HEAD
+=======
 
     '''
     Purpose:        The purpose of this function is to determine whether or not the I and
@@ -154,3 +156,4 @@ class imgRestFuncs(object):
         
 
         return True
+>>>>>>> f646783... finished the get_coord function
