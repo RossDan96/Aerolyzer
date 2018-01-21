@@ -140,3 +140,17 @@ class imgRestFuncs(object):
             doc = yaml.load(f)
             f.close()
         return doc
+
+    '''
+    Purpose:        The purpose of this function is to determine whether or not the I and
+                    II quadrants of the image have rgb values indicitive of a sky
+    Inputs:         list of lists red_sky, list of lists green_sky, list of lists blue_sky
+                    Note: Each inner list contains rgb for each pixel in a horizontal row
+    Outputs:        None
+    Returns:        0,1,2
+    Assumptions:    N/A
+    '''
+    def _sun_position(self, red, green, blue):
+        
+
+        return True
