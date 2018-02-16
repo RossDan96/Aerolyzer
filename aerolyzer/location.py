@@ -36,17 +36,17 @@ def get_coord(exifdict):
 
 
 
-def coord_to_zip(coord):
+def coord_to_zip(coord,googlegeokey):
     '''
     Purpose:        The purpose of this script is to convert Latitude and Longitude to a ZIP Code
-    Inputs:         coord: tuple holding latitude and longitude
+    Inputs:         coord: tuple holding latitude and longitude, googlegeokey: The Google geocoding API
     Outputs:        string of 5 digit long ZIP code.
     Returns:        zipcode
     Assumptions:    The EXIF data is valid.
     '''
 
     try:
-        url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+str(coord[0])+","+str(coord[1])+"&key=AIzaSyD0SIrsNBNbE9-hSnfa6gMHALCdLZWJ6uI"
+        url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+str(coord[0])+","+str(coord[1])+"&key="+googlegeokey
         c = urllib2.urlopen(url)
         response = c.read()
         parsedResults = json.loads(response)
@@ -61,7 +61,7 @@ def coord_to_zip(coord):
 
 
 
-def zip_to_coord(zipcode):
+def zip_to_coord(zipcode,googlegeokey):
     '''
     Purpose:        The purpose of this script is to convert ZIP Code to a Latitude and Longitude
     Inputs:         zipcode: 5 digit long ZIP code.
@@ -70,7 +70,7 @@ def zip_to_coord(zipcode):
     Assumptions:    The EXIF data is valid.
     '''
     try:
-        url = 'https://maps.googleapis.com/maps/api/geocode/json?address='+zipcode+'&key=AIzaSyD0SIrsNBNbE9-hSnfa6gMHALCdLZWJ6uI'
+        url = 'https://maps.googleapis.com/maps/api/geocode/json?address='+zipcode+'&key='+googlegeokey
         c = urllib2.urlopen(url)
         results = c.read()
         parsedResults = json.loads(results)
