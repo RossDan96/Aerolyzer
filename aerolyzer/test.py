@@ -1,4 +1,4 @@
-import test_location
+import test_wavelength
 
-test_location.test_location_all()
+test_wavelength.test_all()
 

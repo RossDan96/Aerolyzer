@@ -74,7 +74,7 @@ def zip_to_coord(zipcode,googlegeokey):
         c = urllib2.urlopen(url)
         results = c.read()
         parsedResults = json.loads(results)
-	lat = float(parsedResults['results'][0]['geometry']['location']['lat'])
+        lat = float(parsedResults['results'][0]['geometry']['location']['lat'])
         lon = float(parsedResults['results'][0]['geometry']['location']['lng'])
 
     except Exception:
@@ -90,7 +90,7 @@ def sun_position(exifdict):
     Purpose:        Identify whether an image was taken during sunrise or sunset.
     Inputs:         exifdict: structure storing the image's EXIF data.
     Outputs:        string
-    Returns:        sunrise,sunset,night,day
+    Returns:        sunrise,sunset,(night or day) 1,2,0
     Assumptions:    N/A
     '''
     coord = get_coord(exifdict)
@@ -104,12 +104,12 @@ def sun_position(exifdict):
     pictureTime = (int(hoursTime[0])*60)+int(hoursTime[1])+int(float(hoursTime[2])/60)
 
     if ((pictureTime >= (sunriseTarget - 15)) & (pictureTime <= (sunriseTarget + 30))):
-        return 'sunrise'
+        return 1
     elif ((pictureTime >= (sunsetTarget - 15)) & (pictureTime <= (sunsetTarget + 30))):
-        return 'sunset'
+        return 2
     elif ((pictureTime > (sunsetTarget + 15))|(pictureTime < (sunriseTarget - 15))):
-        return 'night'
+        return 0
     else:
-        return 'day'
+        return 0
 
 
