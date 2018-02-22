@@ -28,20 +28,16 @@ def get_wavelength(abc,mode):
     best=0
     i=0
     min_wavelength = 355
-    ValArray = comparisonArray(mode%2)
+    ValArray = comparisonArray(mode)
     while i < (len(ValArray) - 1):
         a_diff = math.fabs(ValArray[i][0] - abc[0])
         b_diff = math.fabs(ValArray[i][1] - abc[1])
         c_diff = math.fabs(ValArray[i][2] - abc[2])
-        if (mode==3):print str(a_diff) +  " " + str(b_diff) +  " " + str(c_diff)
-        if (mode==3): 
-                b_diff = int(b_diff*10)+2
-                c_diff = int(c_diff*10)+2
+	if mode==1:
+                a_diff = a_diff*6
         dist = math.sqrt((a_diff*a_diff)+(b_diff*b_diff)+(c_diff*c_diff))
         
         if(dist < bestDist):
-            if (mode==3):print str(abc[0]) +  "" + str(abc[1]) +  "" + str(abc[2])
-            if (mode==3):print str(ValArray[i][0]) + ""+str(ValArray[i][1]) +  "" + str(ValArray[i][2])
             best = i
             bestDist = dist
         i+=1

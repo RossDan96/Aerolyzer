@@ -47,11 +47,32 @@ def test_comparisonArray():
         return 1
 
 def test_get_wavelength():
-        BGR = wavelength.get_wavelength([255,255,0],2)
+        targetWave = 633
+        waveRange = 370
+        BGR = wavelength.get_wavelength([0,66,255],0)
         print ""
-        HSV = wavelength.get_wavelength([90,255,255],3)
-
+        HSV = wavelength.get_wavelength([8,255,255],1)
+        print "Target Wavelength: "+str(targetWave)
         print "BGR Wavelength: "+str(BGR) + " HSV wavelength: "+str(HSV)
+        BGRAccuracy = (1-((math.fabs(BGR - targetWave))/waveRange))*100
+        HSVAccuracy = (1-((math.fabs(HSV - targetWave))/waveRange))*100
+        print "BGR Accuracy: "+str(BGRAccuracy) + "%   HSV Accuracy: "+str(HSVAccuracy)+"%"
+        diff = math.fabs(BGR-HSV)
+        if (diff<15):
+                return 1
+        return 0
+
+def test_get_wavelength_color(targetWave,color):
+        targetWave = 633
+        waveRange = 370
+        BGR = wavelength.get_wavelength([0,66,255],0)
+        print ""
+        HSV = wavelength.get_wavelength([8,255,255],1)
+        print "Target Wavelength: "+str(targetWave)
+        print "BGR Wavelength: "+str(BGR) + " HSV wavelength: "+str(HSV)
+        BGRdiff = math.fabs(BGR - targetWave)
+        HSVdiff = math.fabs(HSV - targetWave)
+        print "BGR Accuracy: "+str((1-(BGRdiff/waveRange))*100) + "%   HSV Accuracy: "+str((1-(HSVdiff/waveRange))*100)+"%"
         diff = math.fabs(BGR-HSV)
         if (diff<30):
                 return 1
@@ -65,7 +86,7 @@ def compare_bgr_hsv():
         HSVResult = []
         for k in range(n):
                 testBGRColors.append([(k%255),((k+(k*2))%255),((k+(k*3))%255)])
-                testHSVColors.append([(k%360),(((k*2)%100)/100),(((k*3)%100)/100)])
+                testHSVColors.append([(k%180),((k+(k*2))%255),((k+(k*3))%255)])
         t0 = time.time()
         for i in range(n): BGRResult.append(wavelength.get_wavelength(testBGRColors[i],0))
         t1 = time.time()
