@@ -3,7 +3,7 @@ import numpy as np
 import math
         
 def comparisonArray(mode):
-        img = cv2.imread('/home/aero/Documents/Aerolyzer/Aerolyzer/aerolyzer/images/Spectrum1pixel.png')
+        img = cv2.imread('/home/aero/Documents/Real/Aerolyzer/aerolyzer/images/Spectrum1pixel.png')
         BGRArray = []
         HSVArray = []
         i=0

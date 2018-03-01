@@ -47,11 +47,11 @@ def test_comparisonArray():
         return 1
 
 def test_get_wavelength():
-        targetWave = 550
-        waveRange = 370
-        BGR = wavelength.get_wavelength([0,255,163],0)
+        targetWave = 504
+        waveRange = 400
+        BGR = wavelength.get_wavelength([97,255,0],0)
         print ""
-        HSV = wavelength.get_wavelength([41,255,255],1)
+        HSV = wavelength.get_wavelength([71,255,255],1)
         print "Target Wavelength: "+str(targetWave)
         print "BGR Wavelength: "+str(BGR) + " HSV wavelength: "+str(HSV)
         BGRAccuracy = (1-((math.fabs(BGR - targetWave))/waveRange))*100
