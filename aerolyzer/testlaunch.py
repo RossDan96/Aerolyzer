@@ -1,3 +1,3 @@
-import test_wavelength
+import test_aerosol
 
-test_wavelength.test_all()
+test_aerosol.test_all()
