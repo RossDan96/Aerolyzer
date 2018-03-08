@@ -41,4 +41,4 @@ def get_wavelength(abc,mode):
             best = i
             bestDist = dist
         i+=1
-    return best + min_wavelength
+    return float(best + min_wavelength)
