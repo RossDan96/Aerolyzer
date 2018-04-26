@@ -77,7 +77,7 @@ class Location(object):
             c = urllib2.urlopen(url)
             results = c.read()
             parsedResults = json.loads(results)
-        lat = float(parsedResults['results'][0]['geometry']['location']['lat'])
+            lat = float(parsedResults['results'][0]['geometry']['location']['lat'])
             lon = float(parsedResults['results'][0]['geometry']['location']['lng'])
 
         except Exception:

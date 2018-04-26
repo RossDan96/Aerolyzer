@@ -44,13 +44,13 @@ class Wavelength(object):
         best=0
         i=0
         min_wavelength = 380
-        ValArray = comparisonArray(mode)
+        ValArray = self.comparisonArray(mode)
         while i < (len(ValArray) - 1):
-        a_diff = math.fabs(ValArray[i][0] - abc[0])
-        b_diff = math.fabs(ValArray[i][1] - abc[1])
-        c_diff = math.fabs(ValArray[i][2] - abc[2])
+            a_diff = math.fabs(ValArray[i][0] - abc[0])
+            b_diff = math.fabs(ValArray[i][1] - abc[1])
+            c_diff = math.fabs(ValArray[i][2] - abc[2])
         if mode==1:
-                a_diff = a_diff*6
+            a_diff = a_diff*6
         dist = math.sqrt((a_diff*a_diff)+(b_diff*b_diff)+(c_diff*c_diff))
         
         if(dist < bestDist):

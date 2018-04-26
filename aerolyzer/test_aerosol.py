@@ -3,6 +3,7 @@ import numpy as np
 import aerosol
 import time
 import math
+aero = aerosol.AeroData()
 
 def test_all():
         testspassed  = 0
@@ -30,10 +31,11 @@ def test_all():
 def test_analyzeWavelength():
         rand = np.random.random() *1000
         wavelength = 300.0
-        print aerosol.analyzeWavelength(wavelength)
+        print aero.analyzeWavelength(wavelength)
         return 1
 def gen_hsvtestlist():
-        randsize = int(((np.random.random() *10000)%200)**2)
+        #randsize = int(((np.random.random() *10000)%200)**2)
+        randsize = 100
         testList = []
         print "Randsize: "+str(randsize)+"\n"
         for i in range(randsize):
@@ -50,7 +52,7 @@ def test_readHazeLayer():
         timeRandoms = t3-t2
         print "time gen_hsvtestlist(): "+ str(timeRandoms)
         t0 = time.time()
-        print aerosol.readHazeLayer(testList)
+        print aero.readHazeLayer(testList)
         t1 = time.time()
         total_n = t1-t0
         print "readHazeLayer runtime: "+ str(total_n)
